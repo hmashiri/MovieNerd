@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Nerd</title>
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
+	<link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+	<!-- endbower -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/app/styles/styles.css">
+	<!-- endinject -->
+</head>
+
+<body ng-app="app" class="ng-cloak">
+	<div class="container">
+	
+		<div class="panel panel-danger">
+			
+			<div class="panel-heading">
+				<label>
+					<img id="header" src="http://www.twitrcovers.com/wp-content/uploads/2014/09/Godzilla-movie-l.jpg">
+					<h2><span> MOVIE - NERD</span></h2>
+				</label>
+			</div>
+		</div>	
+
+		<div ui-view></div>
+		
+		
+
+
+	</div>		
+
+
+	
+
+
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+
+
+<!-- inject:js -->
+<script src="/app/app.js"></script>
+<script src="/app/movie/movie.controller.js"></script>
+<script src="/app/movie/movie.detail.controller.js"></script>
+<script src="/app/movie/movie.service.js"></script>
+<!-- endinject -->
+</body>
+</html>

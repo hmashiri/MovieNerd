@@ -1,0 +1,48 @@
+.container
+{
+	margin-top: 10px;
+}
+
+.ng-cloak
+{
+	display: none;
+}
+
+.title-font
+{
+	font-size: 10px;
+	font-weight: normal;
+
+}
+
+#posters
+{
+	height: 170px;
+	width: 110px;
+}
+
+#header
+{
+	width: 100%;
+	position: relative;
+}
+
+h2
+{
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 90%;
+	margin-left: 20%;
+}
+
+h2 span 
+{ 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: 5px;  
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.6);
+   padding: 10px; 
+   
+}
