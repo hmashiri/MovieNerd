@@ -18,15 +18,19 @@
         ////////////////
 
         function activate() {
+
+
+            MovieService.getMovieInfoDetails($stateParams.movieDetailId).then(function(result) {
+
+                vm.movieSearch = result;
+
+                $('search.details').modal('hide')
+            });
+
+
+            console.log($stateParams.movieDetailId); // << here getting IMDB id from 
+
+
         }
-
-        vm.getMovieDetails = function(movieType){
-
-        	MovieService.getMovie(movieType).then(function(result){
-
-        		vm.search = result.Search;
-        	});
-        }
-
     }
 })();

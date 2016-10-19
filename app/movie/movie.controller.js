@@ -15,22 +15,28 @@
 
         activate();
 
-        ////////////////
+        // ////////////////
 
-        function activate() {
-        }
+        function activate() {}
 
-        vm.getMovieInfo = function(movieType){
 
-        	MovieService.getMovie(movieType).then(function(result){
 
-        		vm.search = result.Search;
-                
+        vm.getMovieInfo = function(movieType) {
 
-        	},function(error){
+
+            MovieService.getMovie(movieType).then(function(result) {
+
+                vm.search = result.Search;
+
+
+            }, function(error) {
                 console.log(error);
             });
+
+
         }
 
     }
+
 })();
+

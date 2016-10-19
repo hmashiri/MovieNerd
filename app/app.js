@@ -1,26 +1,40 @@
 (function() {
     'use strict';
 
-  var app =  angular.module('app', ['ui.router']);
 
-  app.config(function($stateProvider, $urlRouterProvider){
+    var app = angular.module('app', ['ui.router', 'ui.bootstrap']);
 
-  	$urlRouterProvider.otherwise("/search");
-  	
-  	$stateProvider
-  		.state('search',{
-  			url: "/search",
-  			templateUrl: "app/partials/search.html",
-  			controller: 'MovieSearchController',
-  			controllerAs: 'vm'
-  		})
-  		.state('search.details',{
-  			url: "/details/:movieDetailId",
-  			templateUrl: "app/partials/details.html",
-  			controller: 'MovieDetailController',
-  			controllerAs: 'vm'
 
-  		})	
-  })
+    app.config(function($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise("/search");
+
+        $stateProvider
+            .state('search', {
+                url: "/search",
+                templateUrl: "app/partials/search.html",
+                controller: 'MovieSearchController',
+                controllerAs: 'vm'
+            })
+            .state('search.details', {
+                url: "/details:movieDetailId",
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
+                        templateUrl: "app/partials/details.html",
+                        size: 'lg',
+                        backdrop: true,
+                        controller: 'MovieDetailController',
+                        controllerAs: 'vm'
+                    }).result.finally(function() {
+                        $state.go('^');
+                    })
+
+                }],
+                // templateUrl: "app/partials/details.html",
+                controller: 'MovieDetailController',
+                controllerAs: 'vm'
+
+
+            })
+    })
 })();
-

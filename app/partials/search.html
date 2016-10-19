@@ -1,29 +1,24 @@
-
+    
 <div class="input-group form-group">
-	<input type="text" class="form-control" ng-model="movieTitle" placeholder="Search movie..">
-	<span class="input-group-btn">
-	<button class="btn btn-danger" type="button" ng-click="vm.getMovieInfo(movieTitle)">Search Movie!</button>
-	</span>
+    <input type="text" class="form-control" ng-model="movieTitle" placeholder="Search movie..">
+    <span class="input-group-btn">
+    <button class="btn btn-danger" type="button" ng-click="vm.getMovieInfo(movieTitle)">Search Movie!</button>
+    </span>
 </div>
-
-
-
-<div class="row">	
-	<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" ng-repeat="searching in vm.search">
-		<div class="panel panel-danger">				
-			
-			<div class="panel-heading">
-				<label class="title-font">{{searching.Title}}</label>
-			</div>
-
-			<div class="panel-body text-center">
-				<img id="posters" src="{{searching.Poster}}">
-				<br><text class="title-font">Filmed in: {{searching.Year}}</text></br>
-				<button class="btn btn-sm btn-danger" ui-sref="search.details({movieDetailId: searching.imdbID})">More Details</button></br>
-			</div>
-
-		</div>
-	</div>
-</div>	
-
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" ng-repeat="searching in vm.search">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <label class="title-font">{{searching.Title}}</label>
+            </div>
+            <div class="panel-body text-center">
+                <img id="posters" src="{{searching.Poster}}">
+                <br>
+                <text class="title-font">Released in: {{searching.Year}}</text>
+                </br>
+                <button class="btn btn-sm btn-danger" ui-sref="search.details({movieDetailId: searching.imdbID})">More Details</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div ui-view></div>

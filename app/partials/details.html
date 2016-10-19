@@ -1,12 +1,50 @@
-<div class="col-xs-6">
-	<div class="panel panel-warning">
-		<div class="panel-heading" ng-repeat="searching in vm.search">
-			{{searching.Title}}
-		</div>
 
-		<div class="panel-body">
-		</div>
-	</div>	
-</div>
+    <div class="modal-header text-center form-group">
+        <div class="col-xs-12 text-right">
+            <button type="button" class="btn btn-danger" data-dismiss="uibmodal">X</button>
+        </div>
+        <h3 id="keyStyle">{{vm.movieSearch.Title}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+            <label><img id="posterpic" src="{{vm.movieSearch.Poster}}"></label>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-5 col-xs-12">
+            <label id="keyStyle">Year: </label>
+            <label> {{vm.movieSearch.Year}}</label>
+            <p/>
+            <label id="keyStyle">Type: </label>
+            <label> {{vm.movieSearch.Type}}</label>
+            <p/>
+            <label id="keyStyle">Rated: </label>
+            <label> {{vm.movieSearch.Rated}}</label>
+            <p/>
+            <label id="keyStyle">Year Released: </label>
+            <label> {{vm.movieSearch.Released}}</label>
+            <p/>
+            <label id="keyStyle">Runtime: </label>
+            <label> {{vm.movieSearch.Runtime}}</label>
+            <p/>
+            <label id="keyStyle">Genre: </label>
+            <label> {{vm.movieSearch.Genre}}</label>
+            <p/>
+            <label id="keyStyle">Director: </label>
+            <label> {{vm.movieSearch.Director}}</label>
+            <p/>
+            <label id="keyStyle">Actors: </label>
+            <label> {{vm.movieSearch.Actors}}</label>
+            <p/>
+            <label id="keyStyle">Plot: </label>
+            <label> {{vm.movieSearch.Plot}}</label>
+            <p/>
+            <label id="keyStyle">Language: </label>
+            <label> {{vm.movieSearch.Language}}</label>
+            <p/>
+            <label id="keyStyle">Awards: </label>
+            <label> {{vm.movieSearch.Awards}}</label>
+            <p/>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
 
-{{vm.title}}

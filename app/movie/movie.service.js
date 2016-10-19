@@ -9,26 +9,45 @@
 
     /* @ngInject */
     function MovieService($http) {
-        this.getMovie = getMovie;
+        //this.getMovie = getMovie;
 
         ////////////////
 
-        function getMovie(movieType) {
+        this.getMovie = function(movieType) {
 
-        	return $http({
-        		method: 'GET',
-        		url: 'http://www.omdbapi.com/?',
-        		params: {
-        			apikey: 'bbb847c8',
-        			s: movieType
-        		},
-                
-        	}).then(function(response) {
+            return $http({
+                method: 'GET',
+                url: 'http://www.omdbapi.com/?',
+                params: {
 
-        		return response.data;
-        		
-        	});
+                    s: movieType
+                }
+
+            }).then(function(response) {
+
+                return response.data;
+
+            });
         }
+
+
+        this.getMovieInfoDetails = function(movieDetailId) {
+
+            return $http({
+                method: 'GET',
+                url: 'http://www.omdbapi.com/',
+                params: {
+                    i: movieDetailId
+                }
+
+            }).then(function(response) {
+
+
+                return response.data;
+
+            });
+        }
+
 
     }
 })();
